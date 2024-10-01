@@ -1,0 +1,171 @@
+@import url(variables.css);
+
+*{
+    /* font-size: 15px; */
+    box-sizing: border-box;
+}
+
+/* -----Ajustes generales ------- */
+body {
+    font-family: 'Montserrat', sans-serif;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    /* background-color: var(--colorSecond2); */
+    background-image: url(../storage/img/tactile_noise.webp);
+  }
+
+  p, a, span, li, ul, i, div{
+    margin:0;
+    padding:0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+    font-family: 'Playfair Display', serif;
+}
+
+header{
+    background-color: var(--colorSecond1);
+    height: 10vh;
+    border: none;
+    display: flex;
+    flex-direction: row;
+    color: var(--colorSecond10);
+    justify-content: space-around;
+    align-items: center;
+}
+
+header .containerMenu{
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+header .containerMenu i{
+    font-size: 1.5rem;
+}
+header .containerRedes{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap:15px;
+
+}
+
+
+header .containerRedes i{
+    font-size: 1.5rem;
+}
+
+main{
+    background-color: var(--colorSecond2);
+    display: flex;
+    flex-direction: column;   
+    height: 90vh;
+}
+
+section{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    color: var(--colorSecond10);
+}
+
+main .generalInfo{
+    display: flex;
+    flex-direction: column;
+}
+
+main section.generalInfo .datosPersonales{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+main section.generalInfo .datosPersonales .containerFoto{
+    object-fit: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    
+}
+
+main section.generalInfo .datosPersonales .containerFoto img{
+    max-width: 200px;
+    border-radius: 10%;
+    filter: brightness(80%);
+    box-shadow: 3px 4px 5px var(--colorSecond9);
+
+}
+
+main section.generalInfo .datosPersonales .containerDatos h4{
+    color: var(--colorSecond12);
+}
+
+main section.generalInfo .datosPersonales .containerDatos span{
+    color: var(--colorSecond6);
+}
+
+main section.generalInfo .containerTecnologias{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    overflow: hidden;
+
+}
+
+main section.generalInfo .containerTecnologias .sliderTecnologias{
+    width: 80vw;
+    overflow: hidden;
+}
+
+
+main section.generalInfo .containerTecnologias .sliderTecnologias .tecnologias {
+    display: flex;
+    animation: scroll 20s linear infinite;
+    -webkit-animation: scroll 20s linear infinite;
+    width: max-content;
+    gap: 20px; 
+}
+
+main section.generalInfo .containerTecnologias .sliderTecnologias .tecnologias:hover{
+    animation-play-state: paused;
+}
+
+
+main section.generalInfo .containerTecnologias .sliderTecnologias .tecnologias .itemTechno i{
+    font-size: 2.5rem;
+    color: var(--colorSecond9);
+} 
+
+main section.generalInfo .containerTecnologias .sliderTecnologias .tecnologias .itemTechno p{
+    font-size: 0.6rem;
+    color: var(--colorSecond12);
+    
+}
+
+main section.generalInfo .containerTecnologias .sliderTecnologias .tecnologias .itemTechno i:hover{
+    color: var(--colorSecond6);
+}
+main section.generalInfo .containerTecnologias .sliderTecnologias .tecnologias .itemTechno i:hover + p{
+    color: var(--colorSecond6);
+}
+
+
+@keyframes scroll {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+    100% {
+        -webkit-transform: translateX(-51%);
+        transform: translateX(-51%);
+    }
+}
