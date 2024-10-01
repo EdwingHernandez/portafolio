@@ -12,8 +12,8 @@ body {
     height: 100vh;
     margin: 0;
     padding: 0;
-    /* background-color: var(--colorSecond2); */
-    background-image: url(../storage/img/tactile_noise.webp);
+    background-color: var(--colorSecond2);
+    /* background-image: url(../storage/img/tactile_noise.webp); */
   }
 
   p, a, span, li, ul, i, div{
@@ -64,11 +64,10 @@ main{
     background-color: var(--colorSecond2);
     display: flex;
     flex-direction: column;   
-    height: 90vh;
 }
 
 section{
-    height: 100vh;
+    height: 90vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -168,4 +167,63 @@ main section.generalInfo .containerTecnologias .sliderTecnologias .tecnologias .
         -webkit-transform: translateX(-51%);
         transform: translateX(-51%);
     }
+}
+
+
+/* Sección de Proyectos */
+main .containerCardsProjects{
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    width: 100vw;
+    height: auto;
+    justify-content: center;
+    justify-items: center;
+    row-gap: 15px;
+}
+
+main .containerCardsProjects .cardProject{
+    display: grid;
+    grid-template-areas:
+    "image"
+    "image"
+    "image"
+    "image"
+    "titulo"
+    "description"
+    "iconos";
+    width: 90%;
+    height: auto;
+    border: 1px solid var(--colorSecond9);
+    border-radius: 5px;
+    padding: 5px;
+}
+
+
+main .containerCardsProjects .cardProject .cardImg{
+    grid-area: image;
+    
+}
+
+main .containerCardsProjects .cardProject .cardImg img{
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+}
+
+main .containerCardsProjects .cardProject h4{
+    grid-area: titulo;
+    justify-self: left;
+    color: var(--colorSecond7);
+}
+
+main .containerCardsProjects .cardProject p{
+    grid-area: description;
+    justify-self: left;
+    font-size: 0.7rem;
+}
+
+main .containerCardsProjects .cardProject .cardIconos{
+    grid-area: iconos;
+    justify-self: right;
 }
