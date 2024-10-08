@@ -14,3 +14,22 @@ botonTema.addEventListener('click', () => {
     iconoTema.classList.add("bx-toggle-left");
     }
 });
+
+const btnMasDet = document.getElementById("masDetails");
+const sectionMasDet = document.getElementById("idMasDetalles");
+const btnMenosDet = document.getElementById("menosDetails");
+
+btnMasDet.addEventListener("click", () => {
+
+  if(sectionMasDet.classList.contains("masDetallesOculto")){
+    sectionMasDet.classList.remove("masDetallesOculto");
+    sectionMasDet.classList.add("masDetallesActivo");
+  }
+});
+
+btnMenosDet.addEventListener("click", () => {
+  if(sectionMasDet.classList.contains("masDetallesActivo")){
+    sectionMasDet.classList.remove("masDetallesActivo");
+    sectionMasDet.classList.add("masDetallesOculto");
+    }
+});

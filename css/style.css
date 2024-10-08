@@ -2,7 +2,15 @@
 
 *{
     box-sizing: border-box;
+    
 }
+
+html{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
 
 /* -----Ajustes generales ------- */
 body {
@@ -11,6 +19,7 @@ body {
     height: 100vh;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
     background-color: var(--bg-100);
     font-family: 'Roboto', sans-serif;
 }
@@ -77,6 +86,7 @@ header .containerRedes a{
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    transition: background-color 0.5s ease;
 }
 
 header .containerRedes a:hover{
@@ -85,7 +95,7 @@ header .containerRedes a:hover{
 
 [data-title]:hover:after {
     opacity: 1;
-    transition: all 0.1s ease 0.5s;
+    transition: all 0.1s ease 0.3s;
     visibility: visible;
 }
 
@@ -97,16 +107,13 @@ header .containerRedes a:hover{
     font-family: Raleway;
     position: absolute;
     padding: 3px 20px;
-    bottom: -1.6em;
-    left: 100%;
+    bottom: -2.5em;
     white-space: nowrap;
     box-shadow: 1px 1px 3px #222222;
     opacity: 0;
-    /* border: 1px solid #111111; */
     z-index: 99999;
     visibility: hidden;
     border-radius: 6px;
-    
 }
 
 [data-title] {
@@ -131,6 +138,31 @@ section{
     text-align: center;
     color: var(--text-200);
 }
+
+main .masDetallesOculto{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    visibility: hidden;
+    clip-path: 	circle(0% at 0 0);
+    transition: all 1.5s ease;
+}
+
+main .masDetallesActivo{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100dvh;
+    background-color: var(--primary-200);
+    visibility: visible;
+    clip-path: 	circle(120% at 0 0);
+    transition: all 1.5s ease;
+    z-index: 9999999;
+}
+
 
 main .generalInfo{
     display: flex;
@@ -258,7 +290,7 @@ main .generalInfo .containerTecnologias .sliderTecnologias .tecnologias .itemTec
 
 main .projects .containerCardsProjects{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
     width: 100%;
     height: auto;
     justify-content: center;
@@ -321,6 +353,7 @@ main .containerCardsProjects .cardProject .cardIconos{
     body{
         display: grid;
         justify-items: center; 
+        width: 100%;
     }
 
     main{
@@ -334,7 +367,7 @@ main .containerCardsProjects .cardProject .cardIconos{
     header{
         width: 100%;
         justify-content: space-between;
-        margin: 0;
+        
 
         
     }
