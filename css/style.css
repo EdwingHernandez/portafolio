@@ -1,7 +1,6 @@
 @import url(variables.css);
 
 *{
-    /* font-size: 15px; */
     box-sizing: border-box;
 }
 
@@ -12,11 +11,17 @@ body {
     height: 100vh;
     margin: 0;
     padding: 0;
-    background-color: var(--colorSecond2);
-    /* background-image: url(../storage/img/tactile_noise.webp); */
-  }
+    background-color: var(--bg-100);
+    font-family: 'Roboto', sans-serif;
+}
 
-  p, a, span, li, ul, i, div{
+p{
+    font-family: 'Roboto', sans-serif;
+    margin:0;
+    padding:0;
+}
+
+a, span, li, ul, i, div{
     margin:0;
     padding:0;
 }
@@ -24,18 +29,20 @@ body {
 h1, h2, h3, h4, h5, h6 {
     margin: 0;
     padding: 0;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Poppins', sans-serif;
 }
 
+
 header{
-    background-color: var(--colorSecond1);
+    background-color: var(--bg-200);
     height: 10vh;
     border: none;
     display: flex;
     flex-direction: row;
-    color: var(--colorSecond10);
+    color: var(--text-200);
     justify-content: space-around;
     align-items: center;
+    width: 100%;
 }
 
 header .containerMenu{
@@ -44,9 +51,14 @@ header .containerMenu{
     justify-content: flex-start;
 }
 
+header .containerMenu .navBar{
+    display: none;
+}
+
 header .containerMenu i{
     font-size: 1.5rem;
 }
+
 header .containerRedes{
     display: flex;
     flex-direction: row;
@@ -55,64 +67,133 @@ header .containerRedes{
 
 }
 
-
-header .containerRedes i{
-    font-size: 1.5rem;
+header .containerRedes a{
+    text-decoration: none;
+    color: var(--text-200);
+    border: 1px solid var(--accent-100);
+    border-radius: 20%;
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 }
 
+header .containerRedes a:hover{
+    background-color: var(--bg-300);
+}
+
+[data-title]:hover:after {
+    opacity: 1;
+    transition: all 0.1s ease 0.5s;
+    visibility: visible;
+}
+
+[data-title]:after {
+    content: attr(data-title);
+    background-color: var(--text-100);
+    color: var(--bg-200);
+    font-size: 14px;
+    font-family: Raleway;
+    position: absolute;
+    padding: 3px 20px;
+    bottom: -1.6em;
+    left: 100%;
+    white-space: nowrap;
+    box-shadow: 1px 1px 3px #222222;
+    opacity: 0;
+    /* border: 1px solid #111111; */
+    z-index: 99999;
+    visibility: hidden;
+    border-radius: 6px;
+    
+}
+
+[data-title] {
+    position: relative;
+}
+
+
 main{
-    background-color: var(--colorSecond2);
+    background-color: var(--bg-100);
     display: flex;
-    flex-direction: column;   
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;   
 }
 
 section{
-    height: 90vh;
+    height: 100dvh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
     text-align: center;
-    color: var(--colorSecond10);
+    color: var(--text-200);
 }
 
 main .generalInfo{
     display: flex;
     flex-direction: column;
-}
-
-main section.generalInfo .datosPersonales{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-main section.generalInfo .datosPersonales .containerFoto{
-    object-fit: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
     
 }
 
-main section.generalInfo .datosPersonales .containerFoto img{
+main .generalInfo .datosPersonales{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 70%;
+}
+
+main .generalInfo .datosPersonales .containerDatos p{
+    display: none;
+}
+
+main .generalInfo .datosPersonales .containerDatos button{
+    padding: 8px 20px;
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(to right, var(--text-300), var(--primary-300));
+    color: var(--bg-100);
+    box-shadow: 0px 0px 5px var(--accent-100);
+    cursor: pointer;
+    
+}
+
+main .generalInfo .datosPersonales .containerFoto{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-200);
+    width: auto;
+    border-radius: 10%;
+    
+}
+
+main .generalInfo .datosPersonales .containerFoto img{
     max-width: 200px;
     border-radius: 10%;
     filter: brightness(80%);
-    box-shadow: 3px 4px 5px var(--colorSecond9);
+    object-fit: cover;
+    width: 100%;
+    box-shadow: 3px 4px 5px var(--primary-300);
+    
 
 }
 
-main section.generalInfo .datosPersonales .containerDatos h4{
-    color: var(--colorSecond12);
+/* main section.generalInfo .datosPersonales .containerDatos h4{
+    color: var(--accent-200);
+} */
+
+main .generalInfo .datosPersonales .containerDatos span{
+    background: linear-gradient(to right, var(--text-300), var(--primary-300));
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
 }
 
-main section.generalInfo .datosPersonales .containerDatos span{
-    color: var(--colorSecond6);
-}
-
-main section.generalInfo .containerTecnologias{
+main .generalInfo .containerTecnologias{
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -120,13 +201,13 @@ main section.generalInfo .containerTecnologias{
 
 }
 
-main section.generalInfo .containerTecnologias .sliderTecnologias{
+main .generalInfo .containerTecnologias .sliderTecnologias{
     width: 80vw;
     overflow: hidden;
 }
 
 
-main section.generalInfo .containerTecnologias .sliderTecnologias .tecnologias {
+main .generalInfo .containerTecnologias .sliderTecnologias .tecnologias {
     display: flex;
     animation: scroll 20s linear infinite;
     -webkit-animation: scroll 20s linear infinite;
@@ -134,27 +215,27 @@ main section.generalInfo .containerTecnologias .sliderTecnologias .tecnologias {
     gap: 20px; 
 }
 
-main section.generalInfo .containerTecnologias .sliderTecnologias .tecnologias:hover{
+main .generalInfo .containerTecnologias .sliderTecnologias .tecnologias:hover{
     animation-play-state: paused;
 }
 
 
-main section.generalInfo .containerTecnologias .sliderTecnologias .tecnologias .itemTechno i{
+main .generalInfo .containerTecnologias .sliderTecnologias .tecnologias .itemTechno i{
     font-size: 2.5rem;
-    color: var(--colorSecond9);
+    color: var(--primary-300);
 } 
 
-main section.generalInfo .containerTecnologias .sliderTecnologias .tecnologias .itemTechno p{
+main .generalInfo .containerTecnologias .sliderTecnologias .tecnologias .itemTechno p{
     font-size: 0.6rem;
-    color: var(--colorSecond12);
+    color: var(--primary-200);
     
 }
 
-main section.generalInfo .containerTecnologias .sliderTecnologias .tecnologias .itemTechno i:hover{
-    color: var(--colorSecond6);
+main .generalInfo .containerTecnologias .sliderTecnologias .tecnologias .itemTechno i:hover{
+    color: var(--text-300);
 }
-main section.generalInfo .containerTecnologias .sliderTecnologias .tecnologias .itemTechno i:hover + p{
-    color: var(--colorSecond6);
+main .generalInfo .containerTecnologias .sliderTecnologias .tecnologias .itemTechno i:hover + p{
+    color: var(--text-300);
 }
 
 
@@ -171,11 +252,14 @@ main section.generalInfo .containerTecnologias .sliderTecnologias .tecnologias .
 
 
 /* Sección de Proyectos */
-main .containerCardsProjects{
+/* main .projects{
+    background-color: #F2F0EB; 
+   }*/
+
+main .projects .containerCardsProjects{
     display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: auto;
-    width: 100vw;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    width: 100%;
     height: auto;
     justify-content: center;
     justify-items: center;
@@ -194,7 +278,7 @@ main .containerCardsProjects .cardProject{
     "iconos";
     width: 90%;
     height: auto;
-    border: 1px solid var(--colorSecond9);
+    border: 1px solid var(--primary-300);
     border-radius: 5px;
     padding: 5px;
 }
@@ -214,7 +298,7 @@ main .containerCardsProjects .cardProject .cardImg img{
 main .containerCardsProjects .cardProject h4{
     grid-area: titulo;
     justify-self: left;
-    color: var(--colorSecond7);
+    color: var(--primary-300);
 }
 
 main .containerCardsProjects .cardProject p{
@@ -226,4 +310,108 @@ main .containerCardsProjects .cardProject p{
 main .containerCardsProjects .cardProject .cardIconos{
     grid-area: iconos;
     justify-self: right;
+}
+
+
+
+/*------------------Responsive-------------------------*/
+
+@media (min-width: 1200px){
+    
+    body{
+        display: grid;
+        justify-items: center; 
+    }
+
+    main{
+        width: 60vw;
+    }
+
+    section{
+        width: 60vw;
+    }
+
+    header{
+        width: 100%;
+        justify-content: space-between;
+        margin: 0;
+
+        
+    }
+
+    header .containerMenu i{
+        display: none;
+    }
+
+    header .containerMenu .navBar{
+        display: block;
+        width: 80%;
+    }
+
+    header .containerMenu .navBar ul{
+        display: flex;
+        list-style: none;
+        justify-content: space-around;
+    }
+
+    header .containerMenu .navBar ul li{
+        cursor: pointer;
+    }
+
+    header .containerRedes{
+        width: 10%;
+        justify-content: center;
+    }
+
+    main .generalInfo{
+        justify-content: center;
+        height: 90vh;
+    }
+
+    main .generalInfo .datosPersonales{
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        width: 100%;
+        
+    }
+
+    main .generalInfo .datosPersonales .containerDatos{
+        font-size: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: space-around;
+        text-align: left;
+        width: 50%;
+        height: 40%;
+    }
+
+    main .generalInfo .datosPersonales .containerDatos p{
+        display: block;
+        font-size: 1rem; 
+    }
+
+    main .generalInfo .datosPersonales .containerFoto img{
+        max-width: 300px;
+    }    
+
+    main .generalInfo .containerTecnologias .sliderTecnologias{
+        display: flex;
+        justify-content: center;
+        
+    }
+
+
+}
+
+@media (min-width: 992){
+
+}
+  
+@media (min-width: 768){
+    
+}
+
+@media (min-width: 576){
+    
 }
